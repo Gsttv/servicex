@@ -1,0 +1,8 @@
+package br.com.gustavomorais.servicex.categoria.domain;
+
+public class Categoria {
+	
+	private Integer idCategoria;
+	
+
+}
