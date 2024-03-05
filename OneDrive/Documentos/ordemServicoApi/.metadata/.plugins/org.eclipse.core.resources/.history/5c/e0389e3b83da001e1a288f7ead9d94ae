@@ -1,0 +1,9 @@
+package br.com.gustavomorais.servicex.categoria.respositories;
+
+import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CategoriaRepository extends JpaRepository<> {
+
+}

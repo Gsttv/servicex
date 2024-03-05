@@ -1,0 +1,21 @@
+package br.com.gustavomorais.servicex.servico.domain;
+
+import java.util.List;
+
+import br.com.gustavomorais.servicex.categoria.domain.Categoria;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name = "SERVICO")
+@Data
+public class Servico {
+	
+	private Long idServico;
+	private String nome;
+	private Double valor;
+	private List<Categoria> categoria;
+	private List<OrdemServico> ordemServico;
+	
+}
