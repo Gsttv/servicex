@@ -34,11 +34,10 @@ public class Servico {
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="ID_CAYEGORIA")
+	@JoinColumn(name="ID_CATEGORIA")
 	private Categoria categoria;
 	
-	@OneToMany(mappedBy = "servico")
-	@JoinColumn(name = "ID_ORDEM_SERVICO")
+	@OneToMany(mappedBy = "idOrdemServico", cascade = CascadeType.ALL)
 	private List<OrdemServico> ordemServico;
 	
 }

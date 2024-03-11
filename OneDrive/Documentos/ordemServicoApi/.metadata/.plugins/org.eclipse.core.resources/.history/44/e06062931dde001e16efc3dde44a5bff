@@ -1,0 +1,8 @@
+package br.com.gustavomorais.servicex.endereco.respositories;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EnderecoRespository {
+
+}
