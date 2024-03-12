@@ -29,8 +29,12 @@ public class OrdemServico {
 	@Column(name = "VALOR_ORDEM_SERVICO")
 	private Double valorOrdemServico;
 	
+	
 	@ManyToOne
-	@JoinColumn(name = "ID_SERVICO")
+	//Especifica a coluna na tabela ORDEM_SERVICO que é a chave estrangeira apontando para a tabela Servico
+	//O nome da coluna de chave estrangeira é ID_SERVICO.
+	//Essa coluna contém os identificadores dos registros da tabela Servico aos quais as ordens de serviço estão associadas
+	@JoinColumn(name = "ID_SERVICO") 
 	private Servico servico;
 	
 

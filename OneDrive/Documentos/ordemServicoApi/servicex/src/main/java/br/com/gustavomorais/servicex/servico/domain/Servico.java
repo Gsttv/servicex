@@ -32,12 +32,13 @@ public class Servico {
 	@Column(name = "VALOR_SERVICO")
 	private Double valor;
 	
-	
+	// Define a entidade que contém a chave estrangeira e é responsável por gerenciar a relação.
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ID_CATEGORIA")
 	private Categoria categoria;
 	
 	@OneToMany(mappedBy = "idOrdemServico", cascade = CascadeType.ALL)
+	//indica a chave estrangeira da tablea que possui relacao
 	private List<OrdemServico> ordemServico;
 	
 }
