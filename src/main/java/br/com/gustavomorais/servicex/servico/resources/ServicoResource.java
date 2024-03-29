@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ public class ServicoResource {
 	@GetMapping("/{id}")
 	public ResponseEntity<Optional<Servico>> buscarServicoPorId(@PathVariable Long id){
 		return service.buscarServicoPorId(id)
-				.map(servico -> new ResponseEntity(HttpStatus.FOUND)) //map é um operador intermediário disponível na classe Optional
+				.map(servico -> new ResponseEntity(servico,HttpStatus.FOUND)) //map é um operador intermediário disponível na classe Optional
 				.orElse(new ResponseEntity(HttpStatus.NO_CONTENT));
 	}
 	
@@ -43,7 +44,7 @@ public class ServicoResource {
 		return new ResponseEntity<Servico>(service.criarServico(servico), HttpStatus.CREATED);
 	}
 	
-	@PatchMapping("/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Servico> atualizarServico(@PathVariable Long id,@RequestBody Servico servico){
 		if(!service.buscarServicoPorId(id).isPresent()) {
 			return new ResponseEntity<Servico>(HttpStatus.NO_CONTENT);
