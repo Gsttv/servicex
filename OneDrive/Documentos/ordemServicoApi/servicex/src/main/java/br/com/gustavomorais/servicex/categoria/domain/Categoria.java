@@ -24,9 +24,9 @@ public class Categoria {
 	private Long idCategoria;
 	
 	@Column(name = "NOME_CATEGORIA")
-	private String nomeCategoria;
+	private String nomeCategoria; 
 	
-	@OneToMany(mappedBy = "categoria",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "idServico",cascade = CascadeType.ALL)
 	private List<Servico> servico;
 	
 	public Categoria() {}

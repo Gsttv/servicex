@@ -34,7 +34,7 @@ public class CategoriaController {
 		return new ResponseEntity<List<Categoria>>(categoriaService.recuperarTodasCategoria(),HttpStatus.FOUND);
 	}
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Categoria> buscarCategoriasPorId(@PathVariable Long id){
 		return categoriaService.recuperarCategoriaPorId(id)
