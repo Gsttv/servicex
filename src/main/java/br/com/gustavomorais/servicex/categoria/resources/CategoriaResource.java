@@ -19,7 +19,7 @@ import br.com.gustavomorais.servicex.categoria.services.CategoriaService;
 
 @RestController
 @RequestMapping(value = "/categoria")
-public class CategoriaController {
+public class CategoriaResource {
 
 	@Autowired
 	private CategoriaService categoriaService;

@@ -18,7 +18,7 @@ import br.com.gustavomorais.servicex.endereco.services.EnderecoService;
 
 @RestController
 @RequestMapping(value = "/endereco")
-public class EnderecoController {
+public class EnderecoResource {
 	
 	@Autowired
 	private EnderecoService enderecoService;
